@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+</head>
+<body>
+<div id="layout-content">
+<p><p style="text-align:center">
+<!DOCTYPE html PUBLIC &ldquo;-//W3C//DTD XHTML 1.1//EN&rdquo;
+&ldquo;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&rdquo;>
+<html xmlns=&ldquo;http://www.w3.org/1999/xhtml&rdquo; xml:lang=&ldquo;en&rdquo;>
+<head>
+<meta name=&ldquo;generator&rdquo; content=&ldquo;jemdoc, see http://jemdoc.jaboc.net/&rdquo; />
+<meta http-equiv=&ldquo;Content-Type&rdquo; content=&ldquo;text/html;charset=utf-8&rdquo; />
+<link rel=&ldquo;stylesheet&rdquo; href=&ldquo;jemdoc.css&rdquo; type=&ldquo;text/css&rdquo; />
+<title>MathJax Example</title>
+<!&ndash; MathJax &ndash;>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML&rsquo; async>
+</script>
+<script type=&ldquo;text/x-mathjax-config&rdquo;>
+MathJax.Hub.Config({
+TeX: { equationNumbers: { autoNumber: &ldquo;AMS&rdquo; } }
+});
+</script>
+<!&ndash; End MathJax &ndash;>
+</head>
+<body>
+<table summary=&ldquo;Table for page layout.&rdquo; id=&ldquo;tlayout&rdquo;>
+<tr valign=&ldquo;top&rdquo;>
+<td id=&ldquo;layout-menu&rdquo;>
+<div class=&ldquo;menu-category&rdquo;>Wei-Cheng Lee</div>
+<div class=&ldquo;menu-item&rdquo;><a href=&ldquo;index.html&rdquo;>About</a></div>
+<div class=&ldquo;menu-item&rdquo;><a href=&ldquo;index.html&rdquo;>CV</a></div>
+<div class=&ldquo;menu-category&rdquo;>Research</div>
+<div class=&ldquo;menu-item&rdquo;><a href=&ldquo;mathjax.html&rdquo; class=&ldquo;current&rdquo;>InProgress</a></div>
+<div class=&ldquo;menu-category&rdquo;>Notes</div>
+<div class=&ldquo;menu-item&rdquo;><a href=&ldquo;mathjax.html&rdquo; class=&ldquo;current&rdquo;>InProgress</a></div>
+<div class=&ldquo;menu-category&rdquo;>Blog</div>
+<div class=&ldquo;menu-item&rdquo;><a href=&ldquo;mathjax.html&rdquo; class=&ldquo;current&rdquo;>InProgress</a></div>
+</td>
+<td id=&ldquo;layout-content&rdquo;>
+<div id=&ldquo;toptitle&rdquo;>
+<h1>MathJax Example</h1>
+</div>
+<p>
+In this modified version of <tt>jemdoc</tt>, a LaTeX equation block can be typed in as
+</p>
+<p style=&ldquo;text-align:center&rdquo;>
+\[
+\nabla \cdot \mathbf{D} = \rho_f\\
+\nabla \cdot \mathbf{B} = 0,\\
+\nabla \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}\\
+\nabla \times \mathbf{H} = \mathbf{J}_f - \frac{\partial\mathbf{D}}{\partial t}.
+\]
+</p><p>
+You can also align equations using LaTeX's <tt>aligned</tt> block:
+</p>
+<p style=&ldquo;text-align:center&rdquo;>
+\[
+\begin{aligned}
+\nabla \cdot \mathbf{D} &amp;= \rho_f\\
+\nabla \cdot \mathbf{B} &amp;= 0\\
+\nabla \times \mathbf{E} &amp;= -\frac{\partial\mathbf{B}}{\partial t}\\
+\nabla \times \mathbf{H} &amp;= \mathbf{J}_f - \frac{\partial\mathbf{D}}{\partial t}.
+\end{aligned}
+\]
+</p><p>
+To number the equation block, wrap the equations with LaTeX's <tt>equation</tt> block:
+</p>
+<p style=&ldquo;text-align:center&rdquo;>
+\[
+\begin{equation}
+\begin{aligned}
+\nabla \cdot \mathbf{D} &amp;= \rho_f\\
+\nabla \cdot \mathbf{B} &amp;= 0\\
+\nabla \times \mathbf{E} &amp;= -\frac{\partial\mathbf{B}}{\partial t}\\
+\nabla \times \mathbf{H} &amp;= \mathbf{J}_f - \frac{\partial\mathbf{D}}{\partial t}.
+\end{aligned}
+\end{equation}
+\]
+</p><p>
+Instead, you can use LaTeX's <tt>align</tt> (not <tt>aligned</tt>) block to number the individual equations:
+</p>
+<p style=&ldquo;text-align:center&rdquo;>
+\[
+\begin{align}
+\nabla \cdot \mathbf{D} &amp;= \rho_f\label{eq:D}\\
+\nabla \cdot \mathbf{B} &amp;= 0\label{eq:B}\\
+\nabla \times \mathbf{E} &amp;= -\frac{\partial\mathbf{B}}{\partial t}\label{eq:E}\\
+\nabla \times \mathbf{H} &amp;= \mathbf{J}_f - \frac{\partial\mathbf{D}}{\partial t}\label{eq:H}
+\end{align}
+\]
+</p><p>
+You can also type inline equations as \[A x = b\].  Referencing equations is done as Eqs.&nbsp;\(\eqref{eq:E}\) and \(\eqref{eq:H}\).
+
+
+</p>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+</p></p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2024-07-25 02:18:49 台北標準時間, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</div>
+</body>
+</html>
