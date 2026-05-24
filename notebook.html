@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="manual draft based on jemdoc layout" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Research Notebook
+</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Wei-Cheng Lee</div>
+<div class="menu-item"><a href="index.html">About</a></div>
+<div class="menu-category">Research</div>
+<div class="menu-item"><a href="pubs.html">Publications&amp;CV</a></div>
+<div class="menu-item"><a href="notebook.html" class="current">Notebook</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Research Notebook
+</h1>
+</div>
+<p class="signal-line">
+Short notes on research taste, proof habits, and problems I would like to discuss with people who care about learning theory, reinforcement learning, and optimization.
+</p>
+
+<div class="notebook-entry">
+<h2>Why TD Learning Keeps Pulling Me Back</h2>
+<p class="note-date">Draft note, May 2026</p>
+<p>
+Temporal-difference learning is interesting to me because it sits at an uncomfortable interface: the algorithm is simple, the data are dependent, the objective is often implicit, and the stability story is easy to get wrong. That combination makes it a useful test case for theory.
+</p>
+<p>
+I like that a TD proof has to respect both the stochastic process and the numerical behavior of the update. A bound that ignores the Markovian data feels incomplete; an experiment without a finite-time explanation feels fragile. The best work, to me, makes those two views constrain each other.
+</p>
+<p>
+This is also why I want more conversations around TD learning. The field has clean asymptotic intuitions, practical algorithms, and many finite-sample gaps. Those gaps are exactly where a careful theorem can still change how we run the algorithm.
+</p>
+</div>
+
+<div class="notebook-entry">
+<h2>What Makes a Proof Useful</h2>
+<p class="note-date">Draft note, May 2026</p>
+<p>
+I do not think a proof is useful only because it certifies a theorem. A useful proof changes what you can see. It isolates the quantity that actually matters, removes a fake obstacle, or turns a folklore explanation into something precise enough to reuse.
+</p>
+<p>
+The proofs I like most have a diagnostic quality. If an algorithm fails, the proof suggests which assumption broke. If a rate is slow, the proof points to the term that pays for it. If a projection or tuning trick is unnecessary, the proof makes that visible.
+</p>
+<p>
+That is the standard I try to use in my own work: a proof should not only end an argument; it should improve the next conversation.
+</p>
+</div>
+
+<div class="notebook-entry">
+<h2>Research Conversations I Want More Of</h2>
+<p class="note-date">Draft note, May 2026</p>
+<p>
+The best research conversations I have had were not status updates. They were attempts to find the exact point where two people disagreed about a mechanism. Is the issue concentration, geometry, bias, mixing, or just the wrong abstraction?
+</p>
+<p>
+I like discussions where someone is willing to draw the smallest counterexample, write the simplest simulation, or state the missing lemma without pretending it is obvious. That style is efficient, and it turns confusion into a shared object.
+</p>
+<p>
+This notebook is partly an invitation to that kind of discussion. If a note here suggests a better theorem, a cleaner experiment, or a sharper objection, I would like to hear it.
+</p>
+</div>
+
+</td>
+</tr>
+</table>
+</body>
+</html>
