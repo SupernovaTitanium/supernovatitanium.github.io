@@ -153,6 +153,35 @@ p {
 	line-height: 1.3;
 }
 
+.profile-hero {
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	gap: 1.2em;
+	align-items: start;
+	margin-bottom: 1.2em;
+}
+
+.profile-cover {
+	width: 280px;
+	height: 350px;
+	aspect-ratio: 4 / 5;
+	overflow: hidden;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	background: #f8f8f8;
+}
+
+.profile-cover img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.intro-block {
+	min-width: 0;
+}
+
 pre {
 	padding: 0;
 	margin: 0;
