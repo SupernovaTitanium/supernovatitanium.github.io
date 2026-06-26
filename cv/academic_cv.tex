@@ -1,0 +1,127 @@
+\documentclass[10pt, letterpaper]{article}
+\IfFileExists{cv/cv_common.tex}{\input{cv/cv_common.tex}}{\input{cv_common.tex}}
+
+\begin{document}
+
+\docHeader{Ph.D. student in Computer Science, RL / optimization theory}{-6pt}
+
+\section{Research Interests}
+\small{
+I develop practical optimization algorithms with strong theoretical guarantees,
+with a focus on online learning, bandits, and reinforcement learning. I am also
+interested in statistical learning theory, fundamental limits in stochastic
+optimization, and AI for math.
+}
+
+\section{Education}
+\entry
+{King Abdullah University of Science and Technology (KAUST)}{Dec. 2025 -- Present}
+{Ph.D. Student in Computer Science}{Thuwal, Saudi Arabia}
+\begin{itemize}
+  \item Advisor: Francesco Orabona.
+  \item Research focus: practical optimization algorithms with theoretical guarantees, online learning, bandits, reinforcement learning, statistical learning theory, and fundamental limits in stochastic optimization.
+\end{itemize}
+
+\entry
+{King Abdullah University of Science and Technology (KAUST)}{Aug. 2024 -- Dec. 2025}
+{M.Sc. in Computer Science}{Thuwal, Saudi Arabia}
+\begin{itemize}
+  \item Continued into the KAUST Computer Science Ph.D. program.
+  \item Selected coursework: online learning, high-performance computing, numerical methods for stochastic differential equations, computing systems and concurrency.
+\end{itemize}
+
+\entry
+{National Taiwan University}{Sep. 2012 -- Jan. 2018}
+{B.Sc. in Computer Science, Minor in Mathematics}{Taipei, Taiwan}
+\begin{itemize}
+  \item Selected coursework: algorithm design and analysis, real analysis, abstract algebra, linear algebra, probability theory, numerical methods.
+\end{itemize}
+
+\section{Publications}
+\paperLine
+{\href{https://arxiv.org/abs/2606.24981}{A Single Stepsize Suffices for Unprojected Linear TD(0): Simultaneous Robust and Fast Rates via Polyak--Ruppert Averaging}}
+{COLT 2026}
+{\textbf{Wei-Cheng Lee}, Francesco Orabona.}
+
+\paperLine
+{\href{https://proceedings.mlr.press/v291/saad25a.html}{New Lower Bounds for Stochastic Non-Convex Optimization through Divergence Decomposition}}
+{COLT 2025}
+{El Mehdi Saad, \textbf{Wei-Cheng Lee}, Francesco Orabona.}
+
+\paperLine
+{\href{https://papers.nips.cc/paper_files/paper/2018/hash/09779bb7930c8a0a44360e12b538ae3c-Abstract.html}{MixLasso: Generalized Mixed Regression via Convex Atomic-Norm Regularization}}
+{NeurIPS 2018}
+{Ian E.H. Yen, \textbf{Wei-Cheng Lee}, Kai Zhong, Sung-En Chang, Pradeep Ravikumar, Shou-De Lin.}
+
+\paperLine
+{\href{https://proceedings.mlr.press/v70/yen17a.html}{Latent Feature Lasso}}
+{ICML 2017}
+{Ian E.H. Yen, \textbf{Wei-Cheng Lee}, Sung-En Chang, Arun S. Suggala, Shou-De Lin, Pradeep Ravikumar.}
+
+\paperLine
+{\href{https://arxiv.org/abs/2511.11211}{A Best-of-Both-Worlds Proof for Tsallis-INF without Fenchel Conjugates}}
+{arXiv}
+{\textbf{Wei-Cheng Lee}, Francesco Orabona.}
+
+\paperLine
+{\href{https://arxiv.org/abs/2506.01052}{A Robust $\widetilde{\mathcal{O}}(1/\sqrt{T})$ Rate for Unprojected TD Learning with Linear Function Approximation}}
+{arXiv}
+{\textbf{Wei-Cheng Lee}, Francesco Orabona.}
+
+\section{Research Experience}
+\entry
+{Graduate Research, King Abdullah University of Science and Technology (KAUST)}{Aug. 2024 -- Present}
+{M.Sc./Ph.D. Student in Computer Science}{Thuwal, Saudi Arabia}
+\begin{itemize}
+  \item Proved finite-time high-probability guarantees for unprojected linear TD(0) under Markovian sampling, showing that a single stepsize schedule yields bounded iterates and both robust curvature-free and fast curvature-dependent rates via Polyak--Ruppert averaging.
+  \item Established query-complexity lower bounds for first-order stochastic non-convex optimization under structural conditions such as quasar-convexity, quadratic growth, and restricted secant inequalities, using divergence decomposition to reduce optimization to hard function-identification problems.
+  \item Developed a simplified primal analysis for Tsallis-INF in multi-armed bandits that proves best-of-both-worlds guarantees via OCO tools instead of Fenchel-conjugate machinery.
+\end{itemize}
+
+\entry
+{Institute of Information Science, Academia Sinica}{Feb. 2022 -- Mar. 2024}
+{Research Assistant}{Taipei, Taiwan}
+\begin{itemize}
+  \item Proved regret guarantees for online reinforcement learning in infinite-horizon average-reward MDPs with full-information feedback, developing a new entropic-linear-program analysis for Hedge-style behavior across stochastic and adversarial regimes.
+\end{itemize}
+
+\entry
+{Graduate Research, National Taiwan University}{Feb. 2018 -- Jun. 2021}
+{M.Sc. Student}{Taipei, Taiwan}
+\begin{itemize}
+  \item Derived algorithms for log-loss function classes, with emphasis on online portfolio selection.
+\end{itemize}
+
+\section{Engineering Experience}
+\entry
+{Saudi Aramco, Research \& Development Center}{Jun. 2025 -- Jul. 2025}
+{Graduate Intern}{Dhahran, Saudi Arabia}
+\begin{itemize}
+  \item Prototyped a Pyomo-based solver for gas-oil separation network optimization, formulating the problem as a mixed-integer nonlinear program and integrating JAX-accelerated derivative computations with finite-difference validation.
+\end{itemize}
+
+\entry
+{Graduate Institute of Biomedical Electronics and Bioinformatics, NTU}{Aug. 2021 -- Jan. 2022}
+{Research Assistant}{Taipei, Taiwan}
+\begin{itemize}
+  \item Contributed to a collaborative NTU-Far Eastern Memorial Hospital project on ICD-10 coding support, applying BERT-based language models to classify clinical case descriptions for Taiwan National Health Insurance workflows.
+\end{itemize}
+
+\section{Teaching}
+\entry{Reinforcement Learning, KAUST}{Spring 2026, Spring 2025}{Teaching Assistant}{}
+\par\vspace{2pt}
+\entry{Optimization Algorithms, National Taiwan University}{Fall 2019, Fall 2018}{Teaching Assistant}{}
+\par\vspace{2pt}
+\entry{Probability, National Taiwan University}{Spring 2018, Spring 2015}{Teaching Assistant}{}
+
+\section{Honors}
+\entry
+{Presidential Award, National Taiwan University}{Spring 2014, Fall 2012}
+{Awarded to the top 5\% of students each semester}{}
+
+\section{Technical Stack}
+\small{
+\textbf{Programming:} Python, JAX, PyTorch, C/C++, MATLAB, Julia, Go, JavaScript.
+}
+
+\end{document}

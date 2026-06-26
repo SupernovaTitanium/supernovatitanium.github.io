@@ -1,0 +1,47 @@
+\usepackage[left=0.55in, right=0.55in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{charter}
+\usepackage{inconsolata}
+
+\titleformat{\section}
+  {\vspace{-5pt}\scshape\raggedright\large\bfseries}
+  {}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=0.16in, itemsep=1pt, topsep=2pt}
+
+\newcommand{\docHeader}[2]{
+  \begin{center}
+    {\Huge \textbf{Wei-Cheng Lee}} \\ \vspace{3pt}
+    \small
+    \texttt{weicheng.frank.lee@gmail.com} \ $\cdot$ \
+    \href{https://supernovatitanium.github.io/index.html}{\texttt{website}} \ $\cdot$ \
+    \href{https://openreview.net/profile?id=~Wei-Cheng_Lee3}{\texttt{OpenReview}} \\
+    \vspace{2pt}
+    \textit{#1}
+  \end{center}
+  \vspace{#2}
+}
+
+\newcommand{\entry}[4]{
+  \vspace{-2pt}
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \texttt{\small #2} \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\paperLine}[3]{
+  \vspace{1pt}
+  \begin{tabularx}{\textwidth}[t]{>{\bfseries\raggedright\arraybackslash}X r}
+    #1 & \texttt{\small #2} \\
+  \end{tabularx}
+  {\small #3}\vspace{1pt}
+}
