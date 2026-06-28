@@ -45,3 +45,11 @@
   \end{tabularx}
   {\small #3}\vspace{1pt}
 }
+
+\newcommand{\talkLine}[4]{
+  \vspace{1pt}
+  \begin{tabularx}{\textwidth}[t]{>{\bfseries\raggedright\arraybackslash}X r}
+    #1 & \texttt{\small #2} \\
+  \end{tabularx}
+  \parbox[t]{\textwidth}{\small #3\par #4}\vspace{2pt}
+}
