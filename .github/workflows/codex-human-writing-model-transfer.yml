@@ -46,9 +46,9 @@ jobs:
           dst.write_text(text, encoding="utf-8")
           PY
           chmod +x "$FIXED"
-          grep -q 'bin-ubuntu-x64\\.tar\\.gz' "$FIXED"
-          grep -q 'tar -xzf' "$FIXED"
-          grep -q '^STATUS=\$?' "$FIXED"
+          grep -Fq 'bin-ubuntu-x64\\.tar\\.gz' "$FIXED"
+          grep -Fq 'tar -xzf' "$FIXED"
+          grep -Fq 'STATUS=$?' "$FIXED"
 
       - name: Run Codex A/B experiment in fresh Ubuntu VM
         shell: bash
