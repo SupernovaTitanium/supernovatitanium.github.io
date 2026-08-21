@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out", required=True)
     parser.add_argument("--prompts", required=True)
     parser.add_argument("--codex", default="codex")
-    parser.add_argument("--timeout", type=int, default=180)
+    parser.add_argument("--timeout", type=int, default=240)
     return parser.parse_args()
 
 
@@ -33,9 +33,13 @@ def main() -> int:
         "B": {
             "home": work / "home-B",
             "cwd": work / "work-B",
-            "prefix": "使用 $human-writing 完成以下任務。\n\n",
+            "prefix": (
+                "使用 $human-writing 完成以下任務。請先讀取該 skill 的完整 "
+                "SKILL.md，以及它針對此任務要求的必要參考檔，再依照規則交稿。\n\n"
+            ),
         },
     }
+    model_control_suffix = "\n\n/no_think"
 
     for subdir in ("raw", "stderr", "final"):
         (out / subdir).mkdir(parents=True, exist_ok=True)
@@ -43,7 +47,7 @@ def main() -> int:
     manifest: list[dict[str, object]] = []
     for item in prompts:
         for condition, spec in conditions.items():
-            prompt = spec["prefix"] + item["prompt"]
+            prompt = spec["prefix"] + item["prompt"] + model_control_suffix
             stem = f"{item['id']}_{condition}"
             raw_path = out / "raw" / f"{stem}.jsonl"
             err_path = out / "stderr" / f"{stem}.txt"
