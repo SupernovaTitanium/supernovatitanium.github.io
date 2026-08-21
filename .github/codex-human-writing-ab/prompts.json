@@ -1,0 +1,52 @@
+[
+  {
+    "id": "01",
+    "scene": "給指導教授的研究進度更新",
+    "prompt": "請把以下材料寫成一段要寄給指導教授的繁體中文研究進度更新，120至170字，先下結論，再說證據與下一步。材料如下。我們檢查 mixing-free TD(0) 的 radius bootstrap。原稿把 residual Markov noise 從 τ_mix² 直接寫成 τ_mix，缺少吸收 −y_t² 的關鍵引理。其餘 storage identity 與 dyadic anchor 暫時成立。下一步先在 stopped process 下證 Γ_T 的 self-bound，再回填 theorem。不要虛構結果。只輸出正文。"
+  },
+  {
+    "id": "02",
+    "scene": "向合作研究者指出量詞缺口",
+    "prompt": "寫一則給合作研究者的 Slack 訊息，繁體中文100至150字，直率但不失禮。材料如下。Lemma 4 的量詞是對所有 T≥cτ_mix，目前證明只處理固定 T。直接做 union bound 會多一個 log T。二狀態 slow-mode 例子可能構成反例。請對方先別把 lemma 放進主定理，建議改成 dyadic times，再做 time-uniform extension。只輸出訊息。"
+  },
+  {
+    "id": "03",
+    "scene": "給理論 ML 同行的 paper 短評",
+    "prompt": "把以下 paper take-away 寫成給理論機器學習同行看的繁體中文短評，160至200字。Paper 比較 GD、SGD、ridge 在 noisy linear inverse problems 的表現。Ridge 可用顯式正則控制 ill-conditioned directions。Early-stopped GD 的 filter 與 ridge 相近，但並非完全等價。SGD 額外受 sampling noise 影響。與我的 TD 問題可能的關聯是，LSTD 類 closed-form estimator 也許比一步 TD 更容易達到最佳 mixing dependency。最後一句必須標明是推測。只輸出正文。"
+  },
+  {
+    "id": "04",
+    "scene": "向完全不懂機器學習的長輩解釋 mixing",
+    "prompt": "用讓完全不懂機器學習的長輩聽懂的繁體中文，解釋為何 Markov chain 的 mixing time 會影響 TD(0)，保留式子「誤差 ≈ √(τ_mix/T)」，140至190字。材料如下。連續樣本彼此相關。τ_mix 越大，新資料越慢變得像獨立樣本。T 筆資料的有效新鮮樣本數大約是 T/τ_mix。不要把近似說成定理。只輸出正文。"
+  },
+  {
+    "id": "05",
+    "scene": "回覆 reviewer 對 parameter-free 的質疑",
+    "prompt": "寫一段繁體中文 rebuttal 草稿，150至210字，語氣專業克制。Reviewer 認為我們聲稱 stepsize 完全 parameter-free。事實如下。Stepsize 不使用 ω、τ_mix、γ，只使用 feature bound φ∞。定理仍假設 T≥cτ_mix 才進入主要 rate。我們會把 parameter-free 改成 mixing- and conditioning-oblivious，並在 theorem 前列清楚依賴。不要把 reviewer 描寫成誤解。只輸出正文。"
+  },
+  {
+    "id": "06",
+    "scene": "TD 與 Markovian SGD 研究機會雷達",
+    "prompt": "寫一則研究機會雷達，繁體中文130至180字，給正在做 TD 或 Markovian SGD 的研究者。材料如下。新工作證明 LSA 在已知 mixing profile 下可得 linear-in-τ_mix 的 fast rate。它沒有處理 unknown mixing、unprojected radius 或 γ-oblivious tuning。最值得追的是能否把 Poisson corrector 與 observable block certificate 結合。可信度中等，因為尚未核對 supplementary proof。只輸出正文。"
+  },
+  {
+    "id": "07",
+    "scene": "COLT poster 的二十秒口頭介紹",
+    "prompt": "把以下研究內容寫成20秒 poster 口頭介紹，繁體中文100至150字，自然、有記憶點，但不要寫口號。題目是 A Single Stepsize Suffices for Unprojected Linear TD(0)。貢獻包括不投影、每步只用一筆 Markov sample、stepsize 不用 τ_mix、ω、γ。核心方法是 TD square identity 加 Poissonized self-bounding bootstrap。Burn-in 後的 rate 是 robust Õ(√τ_mix/√T)、fast Õ(τ_mix/T)。只輸出口播。"
+  },
+  {
+    "id": "08",
+    "scene": "給共同作者的 camera-ready 修改說明",
+    "prompt": "寫一段給共同作者看的 camera-ready 修改說明，繁體中文130至180字，語氣務實。已完成三件事。第一，把 feature mixing 與 global chain mixing 分開定義。第二，rate table 補上 Li、Samsonov、Haque–Khodadadian–Maguluri。第三，Poisson corrector proof 移到 appendix。仍未完成 γ=1 average-reward extension。需要共同作者確認 theorem 2 是否保留 all-time high-probability wording。只輸出正文。"
+  },
+  {
+    "id": "09",
+    "scene": "COLT 差旅核銷行政郵件",
+    "prompt": "寫一封繁體中文行政郵件，120至170字。事實如下。我將於2026年6月28日抵達 San Diego，6月29日至7月4日參加 COLT，住宿 Bahia Resort。註冊費收據已附，住宿 invoice 尚待飯店開立。請承辦人先確認註冊費能否核銷，住宿文件收到後再補。已確認與待確認要分清楚。只輸出主旨與正文。"
+  },
+  {
+    "id": "10",
+    "scene": "Codex 研究 harness 的 README 說明",
+    "prompt": "寫一段繁體中文 README 說明，150至210字。這個 harness 會用同一份 prompt 分別跑 baseline 與 skill condition。每次使用 fresh session，固定模型與 seed。系統保存原始 JSONL、final message、skill commit SHA、Codex version。check_prose.py 只當規則偵測，不當人類品質評分。目的是做可重現比較，不是證明 skill 對所有模型都有效。只輸出正文。"
+  }
+]
