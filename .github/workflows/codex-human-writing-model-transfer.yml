@@ -1,12 +1,92 @@
-name: codex-human-writing-ab-staging
+name: codex-human-writing-ab
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - codex-human-writing-ab-20260821
 
 permissions: {}
 
 jobs:
-  staging:
+  experiment:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 70
+    permissions:
+      contents: read
     steps:
-      - run: echo "staging only"
+      - name: Check out temporary experiment branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Run Codex A/B experiment in fresh Ubuntu VM
+        shell: bash
+        run: |
+          bash .github/codex-human-writing-ab/run.sh \
+            "$GITHUB_WORKSPACE/.codex-human-writing-ab-output" \
+            "$RUNNER_TEMP/codex-human-writing-ab-work" \
+            "$GITHUB_WORKSPACE/.github/codex-human-writing-ab"
+
+      - name: Upload complete short-lived experiment bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-human-writing-ab-results
+          path: .codex-human-writing-ab-output
+          include-hidden-files: true
+          retention-days: 1
+          if-no-files-found: error
+
+  publish-results:
+    if: always() && github.actor != 'github-actions[bot]'
+    needs: experiment
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - name: Check out temporary experiment branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Download result bundle from this run
+        uses: actions/download-artifact@v4
+        with:
+          name: codex-human-writing-ab-results
+          path: ${{ runner.temp }}/codex-human-writing-ab-results
+
+      - name: Publish only small result files to temporary branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="$RUNNER_TEMP/codex-human-writing-ab-results"
+          DST=".codex-human-writing-ab-results"
+          rm -rf "$DST"
+          mkdir -p "$DST"
+          for name in \
+            report.md results.json metadata.json prompts.json run-manifest.json \
+            setup-status.json experiment-result.txt run-id.txt started-at.txt \
+            codex-version.txt codex-requested-version.txt codex-launcher-sha256.txt \
+            human-writing-commit.txt human-writing-version.txt human-writing-files-sha256.txt \
+            llama-server-version.txt llama-asset-name.txt llama-asset-sha256.txt \
+            llama-asset-expected-digest.txt llama-server-command.txt \
+            llama-health.json llama-models.json llama-props.json llama-responses-smoke.sse \
+            model-repo.txt model-file.txt model-expected-sha256.txt model-actual-sha256.txt \
+            model-expected-size.txt model-actual-size.txt environment.txt fatal-tail.txt; do
+            if [[ -e "$SRC/$name" ]]; then
+              cp -a "$SRC/$name" "$DST/"
+            fi
+          done
+          [[ -d "$SRC/final" ]] && cp -a "$SRC/final" "$DST/"
+          [[ -d "$SRC/checker" ]] && cp -a "$SRC/checker" "$DST/"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$DST/publish-run-id.txt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DST"
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: publish temporary Codex A/B results [skip ci]"
+            git push origin HEAD:codex-human-writing-ab-20260821
+          fi
