@@ -6,14 +6,20 @@ on:
       - codex-human-writing-ab-20260821
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   transfer-public-model:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Download and verify public GGUF
+      - name: Check out temporary branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Download, verify, and split public GGUF
         shell: bash
         run: |
           set -euo pipefail
@@ -22,12 +28,34 @@ jobs:
             https://media.githubusercontent.com/media/bopalvelut-prog/qwen3.5-gguf/main/qwen3.5-presinq-0.8b.gguf
           echo "fb89581c3863314f6e6e1810f11b0bbb30a07315e7b1229a5c7db10fb0100ca6  qwen3.5-presinq-0.8b.gguf" | sha256sum -c -
           stat --printf='bytes=%s\n' qwen3.5-presinq-0.8b.gguf
+          split -b 265000000 -d -a 2 qwen3.5-presinq-0.8b.gguf qwen3.5-presinq-0.8b.gguf.part-
+          test "$(find . -maxdepth 1 -name 'qwen3.5-presinq-0.8b.gguf.part-*' | wc -l)" -eq 2
 
-      - name: Upload short-lived model artifact
+      - name: Upload short-lived model part 00
         uses: actions/upload-artifact@v4
         with:
-          name: qwen3.5-presinq-0.8b
-          path: qwen3.5-presinq-0.8b.gguf
+          name: qwen3.5-presinq-0.8b-part-00
+          path: qwen3.5-presinq-0.8b.gguf.part-00
           compression-level: 0
           retention-days: 1
           if-no-files-found: error
+
+      - name: Upload short-lived model part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3.5-presinq-0.8b-part-01
+          path: qwen3.5-presinq-0.8b.gguf.part-01
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+
+      - name: Record workflow run ID on the temporary branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$GITHUB_RUN_ID" > .codex-human-writing-transfer-run-id
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .codex-human-writing-transfer-run-id
+          git commit -m "chore: record temporary transfer run [skip ci]"
+          git push
