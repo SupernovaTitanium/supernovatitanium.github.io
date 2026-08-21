@@ -1,0 +1,11 @@
+32ca81a9ae10dda7d18963c9eae733477073906b15ee498d02033c8966dbdcaa  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/LICENSE
+70a6e8c92ce74ac157e2ed11d022579aa67027610c47435a187296456008bcf3  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/SKILL.md
+1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/VERSION
+02b92cde5b47d90df37863f1cde3ababdec09a5406b1eb757a1d02a2f8ba8a3a  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/agents/openai.yaml
+52ba7c2fe1591d742a780e2d6ca2d6aa51dc430d88e2946fc4308470fa0bf884  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/dist/human-writing-lite.md
+6efea0c16f28b7ae2d3531a7e2413577e2f6e3c1945912b087c28a0da6d0ad83  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/references/fiction.md
+dd63704550574cd562b55f24307815e9172a63320dcfcc6006b3eab0ccc406bb  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/references/formats.md
+20c22ad9c5c5c3f43ebae6bb7d258cfc42916413a82c2f95a0de9239541641dd  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/references/forum-prose.md
+02004e1fd4dba40d8d50260982ecead81ce3788c7269922b8311514fe8edd0e6  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/references/reality.md
+2e7d8f74ace9d90e4805b6061b8015c91e6088166e5d224be185aba5a94e6592  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/references/revision.md
+13110461036c25477963e19ce35c4a34df2a2d24a7132c909394370803822eea  /home/runner/work/_temp/codex-human-writing-ab-work/human-writing-repo/human-writing/scripts/check_prose.py
