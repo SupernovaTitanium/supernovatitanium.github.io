@@ -1,0 +1,33 @@
+name: codex-human-writing-model-transfer
+
+on:
+  push:
+    branches:
+      - codex-human-writing-ab-20260821
+
+permissions:
+  contents: read
+
+jobs:
+  transfer-public-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Download and verify public GGUF
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 5 --retry-delay 5 \
+            -o qwen3.5-presinq-0.8b.gguf \
+            https://media.githubusercontent.com/media/bopalvelut-prog/qwen3.5-gguf/main/qwen3.5-presinq-0.8b.gguf
+          echo "fb89581c3863314f6e6e1810f11b0bbb30a07315e7b1229a5c7db10fb0100ca6  qwen3.5-presinq-0.8b.gguf" | sha256sum -c -
+          stat --printf='bytes=%s\n' qwen3.5-presinq-0.8b.gguf
+
+      - name: Upload short-lived model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3.5-presinq-0.8b
+          path: qwen3.5-presinq-0.8b.gguf
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
