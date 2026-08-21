@@ -1,36 +1,0 @@
-=== Codex × human-writing A/B experiment ===
-2026-08-21T04:54:49Z
-
-Running kernel seems to be up-to-date.
-
-Restarting services...
- systemctl restart packagekit.service php8.3-fpm.service
-
-No containers need to be restarted.
-
-No user sessions are running outdated binaries.
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-=== Install official Codex CLI ===
-
-added 2 packages in 6s
-codex-cli 0.146.0-alpha.13
-=== Fetch pinned human-writing skill ===
-=== Download official llama.cpp release ===
-curl: (3) URL rejected: Malformed input to a URL function
-sha256sum: /home/runner/work/_temp/codex-human-writing-ab-work/: Is a directory
-unzip:  cannot find or open /home/runner/work/_temp/codex-human-writing-ab-work/, /home/runner/work/_temp/codex-human-writing-ab-work/.zip or /home/runner/work/_temp/codex-human-writing-ab-work/.ZIP.
-.github/codex-human-writing-ab/run.sh: line 110: : command not found
-=== Download official Qwen/Qwen3-4B-GGUF Q4_K_M ===
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1002  100  1002    0     0  14607      0 --:--:-- --:--:-- --:--:-- 14735
-  2 2381M    2 60.4M    0     0  77.0M      0  0:00:30 --:--:--  0:00:30 77.0M 13 2381M   13  317M    0     0   178M      0  0:00:13  0:00:01  0:00:12  258M 21 2381M   21  512M    0     0   184M      0  0:00:12  0:00:02  0:00:10  226M 26 2381M   26  628M    0     0   166M      0  0:00:14  0:00:03  0:00:11  189M 34 2381M   34  812M    0     0   169M      0  0:00:14  0:00:04  0:00:10  187M 41 2381M   41  988M    0     0   171M      0  0:00:13  0:00:05  0:00:08  185M 52 2381M   52 1251M    0     0   184M      0  0:00:12  0:00:06  0:00:06  186M 60 2381M   60 1436M    0     0   184M      0  0:00:12  0:00:07  0:00:05  184M 67 2381M   67 1609M    0     0   183M      0  0:00:13  0:00:08  0:00:05  195M 79 2381M   79 1881M    0     0   192M      0  0:00:12  0:00:09  0:00:03  213M 86 2381M   86 2062M    0     0   191M      0  0:00:12  0:00:10  0:00:02  214M 93 2381M   93 2235M    0     0   189M      0  0:00:12  0:00:11  0:00:01  197M 98 2381M   98 2349M    0     0   183M      0  0:00:12  0:00:12 --:--:--  182M100 2381M  100 2381M    0     0   183M      0  0:00:13  0:00:13 --:--:--  182M
-2497280256
-7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5  /home/runner/work/_temp/codex-human-writing-ab-work/Qwen3-4B-Q4_K_M.gguf
-/home/runner/work/_temp/codex-human-writing-ab-work/Qwen3-4B-Q4_K_M.gguf: OK
-=== Configure isolated A/B homes ===
-=== Start local llama.cpp Responses API ===
-llama-server exited during model load
-.github/codex-human-writing-ab/run.sh: line 184: : command not found
-Experiment failed with status 1

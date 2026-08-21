@@ -1,1 +1,2 @@
-.github/codex-human-writing-ab/run.sh: line 110: : command not found
+version: 0.1.2-dev (build 10545, commit a30273376)
+built with GNU 11.4.0 for Linux x86_64
