@@ -20,10 +20,43 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Patch runner for current llama.cpp archive format
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="$GITHUB_WORKSPACE/.github/codex-human-writing-ab/run.sh"
+          FIXED="$RUNNER_TEMP/codex-human-writing-ab-run.sh"
+          python3 - "$SRC" "$FIXED" <<'PY'
+          from pathlib import Path
+          import sys
+          src, dst = map(Path, sys.argv[1:])
+          text = src.read_text(encoding="utf-8")
+          text = text.replace(
+              'bin-ubuntu-x64\\\\.zip$',
+              'bin-ubuntu-x64\\\\.tar\\\\.gz$',
+          )
+          text = text.replace(
+              'unzip -q "$LLAMA_ZIP" -d "$LLAMA_DIR"',
+              'tar -xzf "$LLAMA_ZIP" -C "$LLAMA_DIR"',
+          )
+          text = text.replace(
+              'main || STATUS=$?',
+              'set +e\n(\n  trap cleanup EXIT\n  main\n)\nSTATUS=$?',
+          )
+          dst.write_text(text, encoding="utf-8")
+          PY
+          chmod +x "$FIXED"
+          grep -q 'bin-ubuntu-x64\\.tar\\.gz' "$FIXED"
+          grep -q 'tar -xzf' "$FIXED"
+          grep -q '^STATUS=\$?' "$FIXED"
+
       - name: Run Codex A/B experiment in fresh Ubuntu VM
         shell: bash
         run: |
-          bash .github/codex-human-writing-ab/run.sh \
+          mkdir -p "$GITHUB_WORKSPACE/.codex-human-writing-ab-output"
+          cp "$RUNNER_TEMP/codex-human-writing-ab-run.sh" \
+            "$GITHUB_WORKSPACE/.codex-human-writing-ab-output/effective-run.sh"
+          bash "$RUNNER_TEMP/codex-human-writing-ab-run.sh" \
             "$GITHUB_WORKSPACE/.codex-human-writing-ab-output" \
             "$RUNNER_TEMP/codex-human-writing-ab-work" \
             "$GITHUB_WORKSPACE/.github/codex-human-writing-ab"
