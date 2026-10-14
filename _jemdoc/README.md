@@ -12,5 +12,3 @@ Commit the `.jemdoc` change and the regenerated `.html` together.
 - `ga.conf` adds the GA4 tag; `ga-mathjax.conf` adds GA4 plus MathJax; `base.conf` adds neither. The page-to-conf mapping is `PAGES` in `build.py`.
 - `jemdoc` is jemdoc+MathJax 0.7.3, patched to always write LF line endings so builds are identical on Windows and Linux.
 - The homepage hero layout is a raw HTML block inside `index.jemdoc`; its styles live in `../jemdoc.css`.
-
-`learning.html`, `newoptimizers.html`, `optimization.html`, `parameter_free.html` and `silverstepsize.html` have no jemdoc source and are maintained as HTML.
