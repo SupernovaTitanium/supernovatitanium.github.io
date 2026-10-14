@@ -1,0 +1,5 @@
+*.html text eol=lf
+_jemdoc/** text eol=lf
+*.pdf binary
+*.jpg binary
+*.png binary

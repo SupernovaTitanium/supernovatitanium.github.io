@@ -1,0 +1,19 @@
+# jemdoc: menu{MENU}{pubs.html}, nofooter
+= Publications & CV
+== CV
+- [wei_cheng_lee_cv.pdf] (Last updated: August 5, 2026)
+== Conference Papers
+- [https://proceedings.mlr.press/v336/lee26d.html \[COLT 2026\]][https://supernovatitanium.github.io/misc/slide_colt.pdf \[Slides-short\]][https://supernovatitanium.github.io/misc/slides_LTSS_clean.pdf \[Slides-long\]][https://supernovatitanium.github.io/misc/poster_colt.pdf \[Poster\]] A Single Stepsize Suffices for Unprojected Linear TD(0): Simultaneous Robust and Fast Rates via Polyak-Ruppert Averaging\n
+       *Wei-Cheng Lee*, Francesco Orabona
+- [https://proceedings.mlr.press/v291/saad25a.html \[COLT 2025\]] New Lower Bounds for Stochastic Non-Convex Optimization through Divergence Decomposition\n
+       El Mehdi Saad, *Wei-Cheng Lee*, Francesco Orabona
+- [https://proceedings.neurips.cc/paper_files/paper/2018/hash/09779bb7930c8a0a44360e12b538ae3c-Abstract.html \[NeurIPS 2018\]] MixLasso: Generalized Mixed Regression via Convex Atomic-Norm Regularization\n
+       Ian E.H. Yen, *Wei-Cheng Lee*, Kai Zhong, Sung-En Chang, Pradeep Ravikumar and Shou-De Lin
+- [https://proceedings.mlr.press/v70/yen17a.html \[ICML 2017\]] Latent Feature Lasso\n
+       Ian E.H. Yen, *Wei-Cheng Lee*, Sung-En Chang, Arun S. Suggala, Shou-De Lin and Pradeep Ravikumar
+== Journal Papers
+- [https://arxiv.org/abs/2506.01052 \[TMLR\]] A Robust $\widetilde{\mathcal{O}}(1/\sqrt{T})$ Rate for Unprojected TD Learning with Linear Function Approximation\n
+       *Wei-Cheng Lee*, Francesco Orabona
+== Preprints
+- [https://arxiv.org/abs/2511.11211 \[arXiv\]] A Best-of-Both-Worlds Proof for Tsallis-INF without Fenchel Conjugates\n
+       *Wei-Cheng Lee*, Francesco Orabona

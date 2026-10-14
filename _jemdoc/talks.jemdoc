@@ -1,0 +1,7 @@
+# jemdoc: menu{MENU}{talks.html}, nofooter
+= Talks
+
+- [https://di.ku.dk/english/events/event-calendar-2026/delta-seminar-by-wei-cheng-lee/ DeLTA Seminar, Department of Computer Science, University of Copenhagen], Copenhagen, Denmark, June 15, 2026.\n
+  /A Single Stepsize Suffices for Unprojected Linear TD(0): Simultaneous Robust and Fast Rates via Polyak-Ruppert Averaging/
+- [https://ltsscopenhagen.github.io/workshop/day-2/ Learning Theory Summer School & Workshop], Copenhagen, Denmark, June 27, 2026. Contributed talk.\n
+  /A Single Stepsize for Robust and Fast Unprojected TD(0)/
