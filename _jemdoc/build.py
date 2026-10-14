@@ -14,12 +14,6 @@ PAGES = {
     "index": "ga.conf",
     "pubs": "ga-mathjax.conf",
     "talks": "base.conf",
-    "TD_learning": "base.conf",
-    "2024": "base.conf",
-    "2025": "base.conf",
-    "Inequality": "base.conf",
-    "Lower_bounds": "base.conf",
-    "mathjax": "base.conf",
 }
 
 
