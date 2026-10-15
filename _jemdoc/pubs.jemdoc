@@ -1,7 +1,7 @@
 # jemdoc: menu{MENU}{pubs.html}, nofooter
 = Publications & CV
 == CV
-- [wei_cheng_lee_cv.pdf] (Last updated: August 5, 2026)
+- [wei_cheng_lee_cv.pdf] (Last updated: October 15, 2026)
 == Conference Papers
 - [https://proceedings.mlr.press/v336/lee26d.html \[COLT 2026\]][https://supernovatitanium.github.io/misc/slide_colt.pdf \[Slides-short\]][https://supernovatitanium.github.io/misc/slides_LTSS_clean.pdf \[Slides-long\]][https://supernovatitanium.github.io/misc/poster_colt.pdf \[Poster\]] A Single Stepsize Suffices for Unprojected Linear TD(0): Simultaneous Robust and Fast Rates via Polyak-Ruppert Averaging\n
        *Wei-Cheng Lee*, Francesco Orabona
@@ -14,6 +14,9 @@
 == Journal Papers
 - [https://arxiv.org/abs/2506.01052 \[TMLR\]] A Robust $\widetilde{\mathcal{O}}(1/\sqrt{T})$ Rate for Unprojected TD Learning with Linear Function Approximation\n
        *Wei-Cheng Lee*, Francesco Orabona
+== Workshop Papers
+- [https://openreview.net/forum?id=WR6ikPIsmt \[EWRL 2026\]] Best-of-Both-Worlds Causal Bandits with Mediator Feedback\n
+       Hubert Marek Drazkowski, *Wei-Cheng Lee*, Francesco Orabona, Yevgeny Seldin
 == Preprints
 - [https://arxiv.org/abs/2511.11211 \[arXiv\]] A Best-of-Both-Worlds Proof for Tsallis-INF without Fenchel Conjugates\n
        *Wei-Cheng Lee*, Francesco Orabona
